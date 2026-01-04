@@ -10,7 +10,7 @@ This text describes a mental model for modern C++.
 It is not the C++ standard.
 It is not an implementation model.
 
-It is a world and educational model you can use to see how values, objects, references, pointers,
+It is an educational model you can use to see how values, objects, references, pointers,
 and lifetimes behave in C++17 and later.
 
 --------------------------------------------------------------------------------
@@ -559,4 +559,7 @@ In this world:
 --------------------------------------------------------------------------------
 END
 --------------------------------------------------------------------------------
+
+If you reuse or adapt this work, please credit:
+kallejohan — "A Two-Layer World for Modern C++"
 
