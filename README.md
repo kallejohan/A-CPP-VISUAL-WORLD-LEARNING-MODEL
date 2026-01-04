@@ -13,6 +13,9 @@ It is not an implementation model.
 It is an educational model you can use to see how values, objects, references, pointers,
 and lifetimes behave in C++17 and later.
 
+Like all metaphors, this model has limits and should be used alongside
+the C++ standard and other authoritative references.
+
 --------------------------------------------------------------------------------
 THE SHAPE OF THE WORLD
 --------------------------------------------------------------------------------
@@ -562,4 +565,5 @@ END
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
