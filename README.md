@@ -62,7 +62,9 @@ Examples that create air bubbles:
 
 i + 1
 
-f()          (if f returns by value)
+f()
+
+(if f returns by value)
 
 A bubble is not an object.
 It is only a value.
@@ -143,9 +145,13 @@ int a = 1;
 a = 4;
 
 An air bubble with value 1 appears in the air.
+
 A green soft-clay object is formed when the bubble pops over it.
+
 Later, a new air bubble pops and reshapes the green clay object into 4.
+
 It is still the same object.
+
 
 --------------------------------------------------------------------------------
 4b) HARD CLAY (GREY) — CONST OBJECTS
@@ -154,8 +160,11 @@ It is still the same object.
 Hard-clay objects:
 
 - appear during execution
+
 - have identity and lifetime
+
 - are shaped once
+
 - cannot be reshaped afterward
 
 Example:
@@ -344,8 +353,11 @@ int f() { return 42; }
 f();
 
 Calling f() produces an air bubble.
+
 No identity is required.
+
 The bubble pops in the air.
+
 Nothing reaches the ground.
 
 --------------------------------------------------------------------------------
@@ -354,7 +366,9 @@ Example 2 — Returning by value, initializing an object
 int x = f();
 
 f() produces an air bubble.
+
 Initialization requires identity.
+
 The value bubble pops into a new soft-clay object x.
 
 --------------------------------------------------------------------------------
@@ -363,12 +377,19 @@ Example 3 — Binding const lvalue reference
 const int& r = f();
 
 f() produces an air bubble.
+
 A port exists at r.
+
 Identity is required.
+
 The bubble descends.
+
 A ground bubble forms.
+
 A temporary int object arises inside it.
+
 A grey wire is shot and binds with a grey hand.
+
 The ground bubble and object persist as long as the reference exists.
 
 --------------------------------------------------------------------------------
@@ -377,11 +398,17 @@ Example 4 — Binding rvalue reference
 int&& r = f();
 
 f() produces an air bubble.
+
 A port exists at r.
+
 The bubble descends.
+
 A ground bubble forms.
+
 A temporary int object arises.
+
 A red wire and hand bind.
+
 Lifetime is extended.
 
 --------------------------------------------------------------------------------
@@ -392,17 +419,27 @@ int&& r = f();
 std::move(r);
 
 f() produces an air bubble.
+
 The bubble descends.
+
 A ground bubble forms.
+
 A temporary object arises.
+
 A red wire binds to it.
+
+
 
 Evaluating std::move(r):
 
 r designates the ground object.
+
 A red hand appears on the object.
+
 The object is viewed as expiring.
+
 No new object is created.
+
 The red hand disappears, but the ground bubble, object,
 and wire persist.
 
@@ -414,9 +451,13 @@ int&& r = f();
 r;
 
 The red wire and hand hold the object inside the ground bubble.
+
 Evaluating expression r produces a green hand on the object.
+
 The object is viewed as a stable lvalue.
+
 The green hand disappears after the expression.
+
 The red wire, ground bubble, and object persist until r goes out of scope.
 
 --------------------------------------------------------------------------------
@@ -427,9 +468,13 @@ int a;
 a = f();
 
 f() produces an air bubble.
+
 Assignment consumes the value.
+
 The shape of a changes.
+
 The bubble pops.
+
 No ground bubble forms.
 
 --------------------------------------------------------------------------------
@@ -440,8 +485,11 @@ int x = 1;
 int y = x + 2;
 
 x produces a green hand.
+
 2 produces an air bubble.
+
 The addition produces an air bubble.
+
 The resulting value initializes and forms y on the ground.
 
 --------------------------------------------------------------------------------
@@ -454,7 +502,9 @@ int& f() { return x; }
 int& r = f();
 
 f() designates x.
+
 A green hand appears on x.
+
 A green wire binds directly to the green hand on x.
 
 --------------------------------------------------------------------------------
@@ -580,6 +630,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
