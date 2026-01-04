@@ -108,6 +108,7 @@ Bedrock entities:
 - never change shape
 
 Examples of bedrock entities:
+
 int f();
 
 void g();
@@ -630,6 +631,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
