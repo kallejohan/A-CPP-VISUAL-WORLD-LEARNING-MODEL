@@ -59,7 +59,9 @@ These bubbles correspond to prvalues.
 Examples that create air bubbles:
 
 42
+
 i + 1
+
 f()          (if f returns by value)
 
 A bubble is not an object.
@@ -104,9 +106,10 @@ Bedrock entities:
 - never change shape
 
 Examples of bedrock entities:
-
 int f();
+
 void g();
+
 constexpr int N = 10;
 
 Functions and compile-time constants belong to bedrock.
@@ -136,6 +139,7 @@ Soft-clay objects:
 Example:
 
 int a = 1;
+
 a = 4;
 
 An air bubble with value 1 appears in the air.
@@ -277,6 +281,7 @@ Ports exist only at reference declarations.
 Examples of ports:
 
 const int& r =   // r is a port
+
 int&& rr = ...   // rr is a port
 
 Ports can exist in bedrock when they represent reference bindings
@@ -335,6 +340,7 @@ PART II — DETAILED WORLD EXAMPLES
 Example 1 — Returning by value, unused
 
 int f() { return 42; }
+
 f();
 
 Calling f() produces an air bubble.
@@ -382,6 +388,7 @@ Lifetime is extended.
 Example 5 — Named rvalue reference and std::move
 
 int&& r = f();
+
 std::move(r);
 
 f() produces an air bubble.
@@ -403,6 +410,7 @@ and wire persist.
 Example 6 — Using a reference as an expression
 
 int&& r = f();
+
 r;
 
 The red wire and hand hold the object inside the ground bubble.
@@ -415,6 +423,7 @@ The red wire, ground bubble, and object persist until r goes out of scope.
 Example 7 — Built-in assignment
 
 int a;
+
 a = f();
 
 f() produces an air bubble.
@@ -427,6 +436,7 @@ No ground bubble forms.
 Example 8 — Arithmetic expressions
 
 int x = 1;
+
 int y = x + 2;
 
 x produces a green hand.
@@ -438,6 +448,7 @@ The resulting value initializes and forms y on the ground.
 Example 9 — Returning by reference
 
 int x = 7;
+
 int& f() { return x; }
 
 int& r = f();
@@ -481,6 +492,7 @@ It does not affect lifetime.
 --------------------------------------------------------------------------------
 
 int x = 10;
+
 int* p = &x;
 
 - x is a soft-clay object on the ground
@@ -496,6 +508,7 @@ The arrow represents direction only.
 --------------------------------------------------------------------------------
 
 int y = 20;
+
 p = &y;
 
 - &y produces a new air bubble containing y’s address
@@ -567,6 +580,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
