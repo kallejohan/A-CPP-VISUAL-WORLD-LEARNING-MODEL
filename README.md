@@ -1,5 +1,8 @@
+This work is licensed under CC BY 4.0 and is free to use in academic,
+educational, and commercial contexts with attribution.
+
 A TWO-LAYER WORLD FOR MODERN C++
-A STORY ABOUT VALUES, OBJECTS, REFERENCES, POINTERS, AND LIFETIMES
+A MODEL DESCRIBING VALUES, OBJECTS, REFERENCES, POINTERS, AND LIFETIMES
 (C++17 and later)
 
 This text describes a mental model for modern C++.
@@ -7,7 +10,7 @@ This text describes a mental model for modern C++.
 It is not the C++ standard.
 It is not an implementation model.
 
-It is a world you can use to see how values, objects, references, pointers,
+It is a world and educational model you can use to see how values, objects, references, pointers,
 and lifetimes behave in C++17 and later.
 
 --------------------------------------------------------------------------------
@@ -556,3 +559,4 @@ In this world:
 --------------------------------------------------------------------------------
 END
 --------------------------------------------------------------------------------
+
