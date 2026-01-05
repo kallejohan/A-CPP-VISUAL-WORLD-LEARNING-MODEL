@@ -259,13 +259,12 @@ Examples:
 - passing by reference
 - initializing a class object
 
-When this happens:
+Temporary materialization:
 
 1) An air bubble representing the value descends toward the ground
-2) It reaches a position where identity is required
-3) A ground bubble forms
-4) Inside that ground bubble, a temporary object arises
-5) The temporary object gets a momentaneous red or red/ grey hand
+2) A ground bubble forms
+3) Inside that ground bubble, a temporary green object arises
+4) The temporary object gets a momentaneous red hand indicating that object is expiring. 
 
 This object:
 
@@ -274,7 +273,9 @@ This object:
 - exists only because the prvalue was forced to materialize
 
 The object is kept alive by the surrounding ground bubble.
-If the bubble pops, the object inside is destroyed.
+If object is not used the bubble pops, the object inside is destroyed.
+
+If an object is initialized by a pure value, the bubble descends to ground where the object shall exist. The bubble pops and a green or grey object is formed on ground. 
 
 --------------------------------------------------------------------------------
 10) REFERENCES — WIRES SHOT FROM PORTS
@@ -329,7 +330,7 @@ The hand and wire persist until reference goes out of scope.
 12) LIFETIME EXTENSION
 --------------------------------------------------------------------------------
 
-When a wire binds to a temporary object inside a ground bubble:
+When a wire binds to a temporary green object with momentaneous red hand inside a ground bubble:
 
 - the wire persists
 - the hand holding it persists
@@ -342,7 +343,9 @@ When the wire disappears:
 - the ground bubble pops
 - the temporary object is destroyed
 
-The wire that binds to the temporary (momentaneous red or red/grey hand on temporary) the first time gets a special seal marker where it goes through the bubble. This seal marker at entering the bubble shows that this reference keeps the bubble and object alive. 
+The wire that binds to the temporary (momentaneous red or hand on green temporary) gets a special seal marker where it goes through the bubble. This seal marker at entering the bubble shows that this reference keeps the bubble and object alive. 
+
+New wires and hands can bind to object inside bubble but these references without seal markers can disappear without destroying the temporary object in ground bubble. 
 
 --------------------------------------------------------------------------------
 PART II — DETAILED WORLD EXAMPLES
@@ -651,6 +654,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
