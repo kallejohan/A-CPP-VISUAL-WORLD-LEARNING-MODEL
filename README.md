@@ -265,6 +265,7 @@ When this happens:
 2) It reaches a position where identity is required
 3) A ground bubble forms
 4) Inside that ground bubble, a temporary object arises
+5) The temporary object gets a momentaneous red or red/ grey hand
 
 This object:
 
@@ -342,6 +343,8 @@ When the wire disappears:
 - the hand disappears
 - the ground bubble pops
 - the temporary object is destroyed
+
+The wire that binds to the temporary (momentaneous red or red/grey hand on temporary) the first time gets a special seal marker where it goes through the bubble. This seal marker at entering the bubble shows that this reference keeos the bubble and object alive. 
 
 --------------------------------------------------------------------------------
 PART II — DETAILED WORLD EXAMPLES
@@ -537,6 +540,7 @@ In this world:
 The arrow is not a wire.
 It does not bind.
 It does not affect lifetime.
+The arrow is always green or grey. 
 
 --------------------------------------------------------------------------------
 14) POINTER INITIALIZATION — ADDRESS BECOMES AN OBJECT
@@ -607,6 +611,23 @@ If the object an arrow points to disappears:
 The world allows this.
 The model makes it visible.
 
+To be added:
+
+Non void pointers always propagate in ground layer. 
+
+A void pointer is a dashed line going under the ground layer and points to a location on ground but never touches anything. It can not be dereferenced. 
+
+A pointer with null value goes up through air layer and into empty space above air layer. It doesnt point to anything. 
+
+Add symbol for arrays, its like a roof symbol (horizontal bracket] bracket above objects (elements of array]
+
+Non void pointer can point to roof(array) or to element in array.
+
+Reference can bind to roof or to element. 
+
+
+
+
 --------------------------------------------------------------------------------
 CLOSING
 --------------------------------------------------------------------------------
@@ -631,6 +652,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
