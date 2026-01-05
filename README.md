@@ -321,8 +321,6 @@ Binding rules:
 - Red wire binds only to red hands
 - Grey/red wire binds to red or grey/red hands
 
-Only grey, red, and grey/red wires may bind to objects
-inside ground bubbles.
 
 When a wire binds to a hand, the hand takes the color of the wire.
 The hand and wire persist until reference goes out of scope.
@@ -653,6 +651,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
