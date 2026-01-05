@@ -234,6 +234,8 @@ Grey/red hand:
 
 Value category belongs to the expression, not to the object.
 
+Hands created by expressions disaspear unless a wire binds to them. 
+
 --------------------------------------------------------------------------------
 8) PRVALUES DO NOT PRODUCE HANDS
 --------------------------------------------------------------------------------
@@ -612,7 +614,9 @@ If the object an arrow points to disappears:
 The world allows this.
 The model makes it visible.
 
-To be added:
+
+
+Planned subjects to be introduced below:
 
 Non void pointers always propagate in ground layer. 
 
@@ -654,6 +658,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
