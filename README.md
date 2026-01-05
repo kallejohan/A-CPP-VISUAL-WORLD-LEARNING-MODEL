@@ -344,7 +344,7 @@ When the wire disappears:
 - the ground bubble pops
 - the temporary object is destroyed
 
-The wire that binds to the temporary (momentaneous red or red/grey hand on temporary) the first time gets a special seal marker where it goes through the bubble. This seal marker at entering the bubble shows that this reference keeos the bubble and object alive. 
+The wire that binds to the temporary (momentaneous red or red/grey hand on temporary) the first time gets a special seal marker where it goes through the bubble. This seal marker at entering the bubble shows that this reference keeps the bubble and object alive. 
 
 --------------------------------------------------------------------------------
 PART II — DETAILED WORLD EXAMPLES
@@ -619,9 +619,10 @@ A void pointer is a dashed line going under the ground layer and points to a loc
 
 A pointer with null value goes up through air layer and into empty space above air layer. It doesnt point to anything. 
 
-Add symbol for arrays, its like a roof symbol (horizontal bracket] bracket above objects (elements of array]
+Add symbol for arrays, its like a roof symbol (horizontal bracket)
+above objects (elements of array)
 
-Non void pointer can point to roof(array) or to element in array.
+Non-void pointer can point to roof (array) or to element in array.
 
 Reference can bind to roof or to element. 
 
@@ -652,6 +653,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
