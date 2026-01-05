@@ -266,7 +266,7 @@ Temporary materialization:
 1) An air bubble representing the value descends toward the ground
 2) A ground bubble forms
 3) Inside that ground bubble, a temporary green object arises
-4) The temporary object gets a momentaneous red hand indicating that object is expiring. 
+4) The temporary green object gets a momentaneous red hand indicating that object is expiring. 
 
 This object:
 
@@ -274,8 +274,10 @@ This object:
 - has identity and storage
 - exists only because the prvalue was forced to materialize
 
+Green object color represents intrinsic mutability of object inside bubble. Stability and value category are shown only by momentaneous hands, in this case a red hand for expiring value. 
+
 The object is kept alive by the surrounding ground bubble.
-If object is not used the bubble pops, the object inside is destroyed.
+If no wire binds to the momentaneous hand produced by materialization, the ground bubble pops at the end of the full expression.
 
 If an object is initialized by a pure value, the bubble descends to ground where the object shall exist. The bubble pops and a green or grey object is formed on ground. 
 
@@ -631,6 +633,12 @@ Non-void pointer can point to roof (array) or to element in array.
 
 Reference can bind to roof or to element. 
 
+Air bubbles does not carry top level const, prvalues dont have top level const, only the object they are carrying can have a low level const.
+That is why:
+
+const int f(); // const not used by compiler
+
+
 
 
 
@@ -658,6 +666,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
