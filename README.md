@@ -639,6 +639,8 @@ That is why:
 const int f(); // const not used by compiler
 
 
+correct in text that grey objects can temporarily materialize if they are class types. Air bubble prvalues of class types carries top level const to materialization.
+
 
 
 
@@ -666,6 +668,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
