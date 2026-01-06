@@ -261,12 +261,12 @@ Examples:
 - passing by reference
 - initializing a class object
 
-Temporary materialization:
+TEMPORARY MATERIALIZATION:
 
 1) An air bubble representing the value descends toward the ground
-2) A ground bubble forms
-3) Inside that ground bubble, a temporary green object arises
-4) The temporary green object gets a momentaneous red hand indicating that object is expiring. 
+2) A ground bubble forms (dome shape)
+3) Inside that ground bubble, a temporary green or grey object arises
+4) The temporary object gets a momentaneous red or grey/red hand indicating that object is expiring. 
 
 This object:
 
@@ -274,12 +274,13 @@ This object:
 - has identity and storage
 - exists only because the prvalue was forced to materialize
 
-Green object color represents intrinsic mutability of object inside bubble. Stability and value category are shown only by momentaneous hands, in this case a red hand for expiring value. 
+Stability and value category are shown only by momentaneous hands, in this case a red or grey/red hand for expiring value. 
 
 The object is kept alive by the surrounding ground bubble.
 If no wire binds to the momentaneous hand produced by materialization, the ground bubble pops at the end of the full expression.
 
-If an object is initialized by a pure value, the bubble descends to ground where the object shall exist. The bubble pops and a green or grey object is formed on ground. 
+DIRECT INITIALIZATION:
+If an object is initialized by a pure value, the bubble floats ober ground where the object shall exist. The bubble pops and a green or grey object is formed on ground. 
 
 --------------------------------------------------------------------------------
 10) REFERENCES — WIRES SHOT FROM PORTS
@@ -334,7 +335,7 @@ The hand and wire persist until reference goes out of scope.
 12) LIFETIME EXTENSION
 --------------------------------------------------------------------------------
 
-When a wire binds to a temporary green object with momentaneous red hand inside a ground bubble:
+When a wire binds to a temporary object with momentaneous red or grey/ref hand inside a ground bubble:
 
 - the wire persists
 - the hand holding it persists
@@ -347,9 +348,9 @@ When the wire disappears:
 - the ground bubble pops
 - the temporary object is destroyed
 
-The wire that binds to the temporary (momentaneous red or hand on green temporary) gets a special seal marker where it goes through the bubble. This seal marker at entering the bubble shows that this reference keeps the bubble and object alive. 
+The wire that binds to the temporary (momentaneous hand on temporary) gets a special seal marker where it goes through the ground bubble. This seal marker at entering the ground bubble shows that this reference keeps the bubble and object alive. 
 
-New wires and hands can bind to object inside bubble but these references without seal markers can disappear without destroying the temporary object in ground bubble. 
+New wires and hands can bind to object inside ground bubble but these references without seal markers can disappear without destroying the temporary object and ground bubble. 
 
 --------------------------------------------------------------------------------
 PART II — DETAILED WORLD EXAMPLES
@@ -378,7 +379,7 @@ f() produces an air bubble.
 
 Initialization requires identity.
 
-The value bubble pops into a new soft-clay object x.
+The value bubble pops into a new green soft-clay object x.
 
 --------------------------------------------------------------------------------
 Example 3 — Binding const lvalue reference
@@ -395,9 +396,9 @@ The bubble descends.
 
 A ground bubble forms.
 
-A temporary int object arises inside it.
+A temporary green int object arises inside it. The object gets a momentaneous red hand. 
 
-A grey wire is shot and binds with a grey hand.
+A grey wire is shot and binds with the red hand that turns grey. The grey wire gets a seal marker where it is entering the ground bubble. 
 
 The ground bubble and object persist as long as the reference exists.
 
@@ -414,9 +415,9 @@ The bubble descends.
 
 A ground bubble forms.
 
-A temporary int object arises.
+A temporary green int object with momentaneous red hand arises.
 
-A red wire and hand bind.
+A red wire is shot from red port, goes through the ground bubble with a seal marker and binds to red hand. 
 
 Lifetime is extended.
 
@@ -435,7 +436,7 @@ A ground bubble forms.
 
 A temporary object arises.
 
-A red wire binds to it.
+A red wire with seal marker binds to red hand on object.
 
 
 
@@ -443,14 +444,14 @@ Evaluating std::move(r):
 
 r designates the ground object.
 
-A red hand appears on the object.
+A new red hand appears on the object.
 
 The object is viewed as expiring.
 
 No new object is created.
 
-The red hand disappears, but the ground bubble, object,
-and wire persist.
+The new red hand disappears, but the ground bubble, object,
+and hand + wire with seal marker persist.
 
 --------------------------------------------------------------------------------
 Example 6 — Using a reference as an expression
@@ -459,7 +460,7 @@ int&& r = f();
 
 r;
 
-The red wire and hand hold the object inside the ground bubble.
+The red wire with sesl marker and hand hold the object inside the ground bubble.
 
 Evaluating expression r produces a green hand on the object.
 
@@ -493,13 +494,15 @@ int x = 1;
 
 int y = x + 2;
 
-x produces a green hand.
+in second expression:
+
+x produces a green hand on green ground object.
 
 2 produces an air bubble.
 
-The addition produces an air bubble.
+The addition produces an new air bubble. The first bubble pops. 
 
-The resulting value initializes and forms y on the ground.
+The second bubble initializes and forms y on the ground.
 
 --------------------------------------------------------------------------------
 Example 9 — Returning by reference
@@ -614,8 +617,6 @@ If the object an arrow points to disappears:
 - the arrow dangles
 
 The world allows this.
-The model makes it visible.
-
 
 
 Planned subjects to be introduced below:
@@ -631,15 +632,7 @@ above objects (elements of array)
 
 Non-void pointer can point to roof (array) or to element in array.
 
-Reference can bind to roof or to element. 
-
-Air bubbles does not carry top level const, prvalues dont have top level const, only the object they are carrying can have a low level const.
-That is why:
-
-const int f(); // const not used by compiler
-
-
-correct in text that grey objects can temporarily materialize if they are class types. Air bubble prvalues of class types carries top level const to materialization.
+Reference can bind to roof or to element in array.  
 
 
 
@@ -668,6 +661,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
