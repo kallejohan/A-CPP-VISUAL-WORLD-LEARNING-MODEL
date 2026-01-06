@@ -280,7 +280,7 @@ The object is kept alive by the surrounding ground bubble.
 If no wire binds to the momentaneous hand produced by materialization, the ground bubble pops at the end of the full expression.
 
 DIRECT INITIALIZATION:
-If an object is initialized by a pure value, the bubble floats ober ground where the object shall exist. The bubble pops and a green or grey object is formed on ground. 
+If an object is initialized by a pure value, the bubble floats over ground where the object shall exist. The bubble pops and a green or grey object is formed on ground. 
 
 --------------------------------------------------------------------------------
 10) REFERENCES — WIRES SHOT FROM PORTS
@@ -288,8 +288,8 @@ If an object is initialized by a pure value, the bubble floats ober ground where
 
 A reference binding is represented as a wire that fastens to a hand.
 
-Wires are not part of the world.
-They are visual aids.
+Wires are like hands not part of the world.
+They are for visualization only. 
 
 A wire is always shot from a port.
 
@@ -661,6 +661,7 @@ Feedback, questions, and alternative viewpoints are welcome via GitHub Discussio
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
