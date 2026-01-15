@@ -657,10 +657,13 @@ In this world:
 END
 --------------------------------------------------------------------------------
 
+This model was created to help people learn C++. It was developed through iterative discussion with the aid of ChatGPT.
+
 Feedback, questions, and alternative viewpoints are welcome via GitHub Discussions.
 
 If you reuse or adapt this work, please credit:
 kallejohan — "A Two-Layer World for Modern C++"
+
 
 
 
